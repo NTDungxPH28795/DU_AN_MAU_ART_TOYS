@@ -30,10 +30,25 @@ function list_pro($key="",$idcat=0){
     $listpro=pdo_query($sql);
     return $listpro;
 }
+function load_name_cat($idcat){
+    if($idcat>0){
+        $sql="select * from category where id=".$idcat;
+        $cat=pdo_query_one($sql);
+        extract($cat);
+        return $name;
+    }else{
+        return "";
+    }
+}
 function edit_pro($id){
     $sql="select * from products where id=".$id;
     $pro=pdo_query_one($sql);
     return $pro;
+}
+function load_pro_same($id, $idcat){
+    $sql="select * from products where idcat=".$idcat." AND id <>".$id;
+    $listpro=pdo_query($sql);
+    return $listpro;
 }
 function update_pro($id,$idcat, $tensp, $giasp, $mota, $hinh){
     if($hinh!=""){

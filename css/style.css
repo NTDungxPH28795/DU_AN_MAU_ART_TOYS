@@ -147,6 +147,7 @@
     line-height: 150%;
 }
 .formuser input[type="text"], 
+.formuser input[type="email"],
 .formuser input[type="password"],
 .frmcontent input[type="text"]{
     width: 100%;
@@ -162,6 +163,7 @@
     border-radius: 5px;
 }
 .formuser input[type="submit"],
+.formuser input[type="reset"],
 .frmcontent input[type="submit"],
 .frmcontent input[type="reset"],
 .frmcontent input[type="button"]{
@@ -171,6 +173,7 @@
     border: 1px #ccc solid;
 }
 .formuser input[type="submit"]:hover,
+.formuser input[type="reset"]:hover,
 .frmcontent input[type="submit"]:hover,
 .frmcontent input[type="reset"]:hover,
 .frmcontent input[type="button"]:hover{
@@ -351,3 +354,6 @@ table tbody tr td{
     from {opacity: .4}
     to {opacity: 1}
   }
+.thongbao{
+    color: red;
+}

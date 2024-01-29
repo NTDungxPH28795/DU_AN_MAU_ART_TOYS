@@ -1,6 +1,8 @@
 <?php
     include "../model/pdo.php";
     include "../model/category.php";
+    include "../model/account.php";
+    include "../model/comment.php";
     include "../model/product.php";
     include "header.php";
     //controler
@@ -8,6 +10,7 @@
     if(isset($_GET['act'])){
         $act=$_GET['act'];
         switch ($act) {
+            //Danh mục
             case 'add-cat':
                 //kiểm tra người dùng có click vào nút add ko
                 if(isset($_POST['add']) && ($_POST['add'])){
@@ -118,6 +121,32 @@
                 $listpro=list_pro();
                 include "product/list.php";
                 break;
+            //Tài khoản
+            case 'list-client':
+                $list_account=list_account();
+                include "account/list.php";
+                break;
+            case 'remove_account':
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    remove_account($_GET['id']);
+                }
+                $list_account=list_account();
+                include "account/list.php";
+                break;
+            //Bình luận
+            case 'list-comment':
+                $list_comment=list_comment(0);
+                include "comment/list_comment.php";
+                break;
+            case 'remove_comment':
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    remove_comment($_GET['id']);
+                }
+                $sql= "select * from comment order by name";
+                $list_comment=list_comment(0);
+                include "comment/list_comment.php";
+                break;
+                
 
             default:
                 include "home.php";

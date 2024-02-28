@@ -12,6 +12,9 @@
                             </div>
                             <div class="row mb10">
                                 <li>
+                                    <a href="index.php?act=mybill">Đươn hàng của tôi</a>
+                                </li>
+                                <li>
                                     <a href="index.php?act=fogot_pass">Quên mật khẩu</a>
                                 </li>
                                 <li>
@@ -71,7 +74,7 @@
                             ?>
                         </ul>
                     </div>
-                    <div class="boxfooter searchbox">
+                    <div class="boxfooter searchbox frmcontent">
                         <form action="index.php?act=product" method="post">
                             <input type="text" name="kyw">
                             <input type="submit" value="Tìm kiếm" name="search">

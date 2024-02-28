@@ -36,6 +36,15 @@
                                 </div>
                                 <h2>'.$price.'đ</h2>
                                 <a href="'.$linksp.'" class="name_pro">'.$name.'</a>
+                                <div class="row btnaddtocart frmcontent">
+                                    <form action="index.php?act=addtocart" method="post">
+                                        <input type="hidden" name="id" value="'.$id.'">
+                                        <input type="hidden" name="name" value="'.$name.'">
+                                        <input type="hidden" name="img" value="'.$img.'">
+                                        <input type="hidden" name="price" value="'.$price.'">
+                                        <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                    </form>
+                                </div>
                             </div>
                             ';
                             $i+=1;

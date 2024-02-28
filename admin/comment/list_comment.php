@@ -31,9 +31,6 @@
                                         <td>'.$idpro.'</td>
                                         <td>'.$date.'</td>
                                         <td>
-                                            <a href="'.$update_comment.'">
-                                                <input type="button" value="Sửa">  
-                                            </a>
                                             <a href="'.$remove_comment.'">
                                                 <input type="submit" value="Xóa">
                                             </a>

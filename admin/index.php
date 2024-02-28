@@ -4,6 +4,7 @@
     include "../model/account.php";
     include "../model/comment.php";
     include "../model/product.php";
+    include "../model/cart.php";
     include "header.php";
     //controler
     
@@ -121,6 +122,7 @@
                 $listpro=list_pro();
                 include "product/list.php";
                 break;
+
             //Tài khoản
             case 'list-client':
                 $list_account=list_account();
@@ -133,6 +135,7 @@
                 $list_account=list_account();
                 include "account/list.php";
                 break;
+
             //Bình luận
             case 'list-comment':
                 $list_comment=list_comment(0);
@@ -146,7 +149,33 @@
                 $list_comment=list_comment(0);
                 include "comment/list_comment.php";
                 break;
-                
+            case 'statistical':
+                $list_statistical=list_statistical();
+                include "statistical/list.php";
+                break;
+            case 'chart':
+                $list_statistical=list_statistical();
+                include "statistical/chart.php";
+                break;
+
+            //Đơn hàng
+            case 'listbill':
+                if(isset($_POST['key']) && ($_POST['key']!="")){
+                    $key=$_POST['key'];
+                }else{
+                    $key="";
+                };
+                $listbill=loadall_bill(0,$key);
+                include "bill/list.php";
+                break;
+
+            case 'remove_bill':
+                if(isset($_GET['id_bill'])&&($_GET['id_bill']>0)){
+                    remove_bill($_GET['id_bill']);
+                }
+                $listbill=loadall_bill(0,"");
+                include "bill/list.php";
+                break;
 
             default:
                 include "home.php";

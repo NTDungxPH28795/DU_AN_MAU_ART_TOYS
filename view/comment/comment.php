@@ -59,6 +59,7 @@
                 $content=$_POST['content'];
                 $idpro=$_POST['idpro'];
                 $iduser=$_SESSION['username']['id'];
+                $iduser=$_SESSION['username']['name'];
                 $date=date('h:i:sa d/m/Y');
                 insert_comment($content, $iduser, $idpro, $date);
                 header("Location: ".$_SERVER['HTTP_REFERER']);
